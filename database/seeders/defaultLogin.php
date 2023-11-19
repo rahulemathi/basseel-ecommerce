@@ -18,7 +18,6 @@ class defaultLogin extends Seeder
             'name' => 'admin',
             'email'=>'admin@gmail.com',
             'role' => 'admin',
-            'phone' => '1323644',
             'password' => Hash::make('Admin@123')
         ]);
 
@@ -26,7 +25,6 @@ class defaultLogin extends Seeder
             'name' => 'ram',
             'email'=>'ram@gmail.com',
             'role' => 'seller',
-            'phone' => '13245644',
             'password' => Hash::make('ram@123')
         ]);
     }
