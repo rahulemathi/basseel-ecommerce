@@ -1,5 +1,5 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
+    @include('sweetalert::alert')
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
@@ -20,8 +20,14 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ url('cart') }}" >
+                    <x-nav-link href="{{ url('show_cart') }}" >
                         {{ __('Cart') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ url('orders') }}" >
+                        {{ __('Orders') }}
                     </x-nav-link>
                 </div>
                 
@@ -119,6 +125,10 @@
                             
                             <x-dropdown-link href="{{ route('add_products') }}">
                                 {{ __('Product Dashboard') }}
+                            </x-dropdown-link>
+
+                            <x-dropdown-link href="{{ url('categories') }}">
+                                {{ __('Add Category') }}
                             </x-dropdown-link>
 
                             <div class="border-t border-gray-200"></div>

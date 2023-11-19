@@ -1,5 +1,5 @@
 <x-app-layout>
-    @include('sweetalert::alert')
+    @if($user === 'admin')
     <div class="md:container md:mx-auto">
 <div class="relative flex h-10 w-full min-w-[200px] max-w-[24rem] my-10">
     <form action="add_category" method="post">
@@ -23,6 +23,7 @@
     </label>
     </form>
   </div>
+  @endif
 
 @if($categories->count() >0)
 <table class="border-collapse w-full">
@@ -46,7 +47,7 @@
             </td>
             <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Actions</span>
-                <a href="{{ url('remove_category',$category->id) }}" class="text-blue-400 hover:text-blue-600 underline pl-6">Remove</a>
+                <a href="{{ url('remove_category',$category->id) }}" class="text-blue-400 hover:text-blue-600 underline pl-6" onclick="return confirm('are you sure to remove this category')">Remove</a>
             </td>
            
         </tr>
